@@ -10,8 +10,9 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:true}));
 
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/yelp_camp");
-
+// mongoose.connect("mongodb://localhost/yelp_camp");
+// mongoose.connect("mongodb://ryan:2911073027gtGT!@ds239692.mlab.com:39692/yelpcampfirst");
+mongoose.connect(process.env.DATABASEURL);
 var Campground = require("./models/campground"),
     Comment = require("./models/comment"),
     User = require("./models/user"),
